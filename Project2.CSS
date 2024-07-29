@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+section{
+    position: relative;
+    display: flex;
+    background-color: #121321;
+    min-height: 100vh;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+
+}
+section::before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;  
+    transform: translate(-250px, -130px); 
+}
+section::after{
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(250px, 140px);   
+}
+.container{
+    position: relative;
+    height: 339px;
+    width: 548px;
+    z-index: 100;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+.container:hover{
+    transform: rotateY(180deg);
+}
+.container .card{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(25px);
+    border-radius: 24px;
+    border: 2px solid rgba(0, 0, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 25px 45px rgba(0, 255, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backface-visibility: hidden;
+}
+.front-face header,
+.front-face .logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px;
+    margin-top: 15px;
+    margin-left: 2px;
+    margin-right: 29px;
+}
+.front-face .logo img{
+    width: 65px;
+}
+.front-face .number{
+    font-size: 2rem;
+}
+h1{
+    color: #fff;
+}
+.front-face .chip{
+    width: 60px;
+}
+.front-face .card-details{
+    display: flex;
+    margin-top: 65px;
+    margin-left: 28px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+h6{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 18px;
+}
+h5{
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-right: 31px;
+}
+h2{
+    font-size: 20px;
+}
+.card-details .name{
+    font-size: 25px;
+    margin-top: 30px;
+}
+.card.back-face{
+    border: none;
+    padding: 25px 25px 25px 25px;
+    transform: rotateY(180deg);
+}
+.card.back-face h6{
+    font-size: 10px;
+}
+.card.back-face .cvv-number{
+    position: absolute;
+    top: 59px;
+    left: 0;
+    height: 48px;
+    width: 100%;
+    background: #000;
+}
+.card.back-face .signature{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 105px;
+    height: 40px;
+    width: 85%;
+    border-radius: 5px;
+    background: repeating-linear-gradient(#fff,#fff 3px,#efefef 0px,#efefef 9px);
+}
+.signature i{
+    color: #000;
+    font-size: 1rem;
+    padding: 2px;
+    border-radius: 4px;
+    margin-right: -30px;
+    background-color: #fff;
+    z-index: -1;
+}
+.card.back-face h4{
+    font-size: 15px;
+    margin-top: 17px;
+}
